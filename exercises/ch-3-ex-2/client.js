@@ -26,7 +26,7 @@ var authServer = {
 var client = {
 	"client_id": "oauth-client-1",
 	"client_secret": "oauth-client-secret-1",
-	"redirect_uris": ["http://localhost:9000/callback"],
+	"redirect_uris": ["http://localhost:9003/callback"],
 	"scope": "foo"
 };
 
@@ -173,7 +173,7 @@ var encodeClientCredentials = function(clientId, clientSecret) {
 
 app.use('/', express.static('files/client'));
 
-var server = app.listen(9000, 'localhost', function () {
+var server = app.listen(9003, 'localhost', function () {
   var host = server.address().address;
   var port = server.address().port;
   console.log('OAuth Client is listening at http://%s:%s', host, port);

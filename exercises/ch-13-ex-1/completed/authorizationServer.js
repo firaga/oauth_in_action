@@ -242,10 +242,10 @@ app.post("/token", function(req, res){
 					var header = { 'typ': 'JWT', 'alg': rsaKey.alg, 'kid': rsaKey.kid };
 
 					var ipayload = {
-						iss: 'http://localhost:9001/',
-						sub: code.user.sub,
+						iss: 'http://localhost:9001/', //资源颁发者
+						sub: code.user.sub, // 用户id
 						aud: client.client_id,
-						iat: Math.floor(Date.now() / 1000),
+						iat: Math.floor(Date.now() / 1000), //颁发时间
 						exp: Math.floor(Date.now() / 1000) + (5 * 60)	
 					};
 					if (code.request.nonce) {
